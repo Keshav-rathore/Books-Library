@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 16px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+}
+
+#logo {
+  width: 30px;
+}
+
+#website-name {
+  font-size: 20px;
+}
+
+/* Search & Filter Box */
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px 0;
+  padding: 8px;
+  border: 1px solid black;
+  border-radius: 6px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.searchbox {
+  display: flex;
+  align-items: center;
+  background: #222;
+  padding: 6px 8px;
+  border-radius: 4px;
+}
+
+.searchbox input {
+  width: 200px;
+  height: 28px;
+  font-size: 14px;
+  padding: 6px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+.searchbox button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.searchbox img {
+  width: 16px;
+  filter: invert(1);
+}
+
+.filter-box {
+  display: flex;
+  align-items: center;
+}
+
+.filter-box label {
+  margin-right: 6px;
+  font-size: 14px;
+}
+
+.filter-box select {
+  padding: 6px;
+  border-radius: 4px;
+  background: #222;
+  color: white;
+  border: none;
+  font-size: 14px;
+}
+
+/* View Toggle Buttons */
+.view-box {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.view-box button {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.view-box .active {
+  background: #ffcc00;
+  color: #111;
+  font-weight: bold;
+}
+
+/* Grid View (Default) */
+#book-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Book Card for Grid View */
+.book {
+  background: #222;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s;
+}
+
+.book:hover {
+  transform: scale(1.05);
+}
+
+.book img {
+  width: 120px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.book h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  white-space: normal;
+  text-align: center;
+}
+
+.book p {
+  font-size: 14px;
+  color: #ccc;
+}
+/* List View - One Book Per Row */
+.list-view {
+  display: grid;
+  grid-template-columns: 1fr; /* Ensures only one book per row */
+  gap: 12px;
+}
+
+/* Book Card Styling */
+.list-view .book {
+  display: grid;
+  grid-template-columns: 100px auto; /* Image on left, text fills remaining space */
+  align-items: center;
+  background: #333;
+  padding: 12px;
+  border-radius: 6px;
+  width: 100%;
+}
+
+/* Book Cover Image */
+.list-view .book img {
+  width: 80px;
+  height: 110px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+/* Book Details (Text Alignment) */
+.list-view .book .book-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: white;
+}
+
+/* Title Styling */
+.list-view .book h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  white-space: normal;
+}
+
+/* Author & Date Styling */
+.list-view .book p {
+  font-size: 14px;
+  color: #ddd;
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+
+/* Pagination */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.pagination-container button {
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: #444;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.pagination-container button:disabled {
+  background: #777;
+  cursor: not-allowed;
+}
+
+#current {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 6px;
+}
